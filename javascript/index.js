@@ -1,4 +1,4 @@
-var buttons = document.querySelectorAll(".drum");
+let buttons = document.querySelectorAll(".drum");
 
 for (let x = 0; x < buttons.length; x++) {
     buttons[x].addEventListener("click", handleClick);
@@ -8,23 +8,23 @@ document.addEventListener("keydown", keyPressed)
 
 function keyPressed() {
     if (event.key === "w" || event.key === "a" || event.key === "s" || event.key === "d" || event.key === "j" || event.key === "k" || event.key === "l") {
-        var fileName = event.key;
-        var button = document.querySelector("." + fileName);
+        let fileName = event.key;
+        let button = document.querySelector("." + fileName);
         buttonAnim(button)
         playSound(fileName);
     }
 }
 
 
-function handleClick(key) {
-    var fileName = this.innerHTML;
-    var button = this;
+function handleClick() {
+    let fileName = this.innerHTML;
+    let button = this;
     buttonAnim(button)
     playSound(fileName);
 }
 
 function playSound(fileName) {
-    var audio = new Audio('sounds/' + fileName + '.mp3');
+    let audio = new Audio('sounds/' + fileName + '.mp3');
     audio.play();
 }
 
